@@ -1,0 +1,7 @@
+python/**/.idea/
+**/__pycache__/
+numpy_pandas/**/.idea/
+**/.idea/
+opencv/**/images/
+kaggle/**/data/
+setup/

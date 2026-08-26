@@ -1,0 +1,13 @@
+# axis
+import numpy as np
+
+# 2차원 만듦
+x = np.arange(1,13)
+x = x.reshape(3,-1)
+
+# 연산
+result = np.sum(x , axis = 0)
+
+print(x)
+print("=====")
+print(result)
