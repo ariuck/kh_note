@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<!--
+    이 문서가 HTML5 문서라는 뜻이다.
+    브라우저가 이 파일을 HTML 표준에 맞게 해석하도록 도와준다.
+-->
+
+<html lang="ko">
+<!--
+    html 태그는 전체 HTML 문서를 감싸는 태그이다.
+
+    lang="ko"
+    → 이 문서의 주 언어가 한국어라는 뜻이다.
+-->
+
+<head>
+    <!--
+        head 태그 안에는
+        화면에 직접 보이는 내용보다는
+        문서 설정, 제목, CSS 연결 같은 정보를 넣는다.
+    -->
+
+    <meta charset="UTF-8">
+    <!--
+        문자 인코딩을 UTF-8로 설정한다.
+        한글이 깨지지 않게 하기 위해 꼭 넣는 것이 좋다.
+    -->
+
+    <title>연습문제3_표태그</title>
+    <!--
+        브라우저 탭에 표시되는 제목이다.
+    -->
+
+    <link rel="stylesheet" href="연습문제03.css">
+    <!--
+        외부 CSS 파일을 연결하는 코드이다.
+
+        rel="stylesheet"
+        → 연결하는 파일이 스타일시트(CSS)라는 뜻
+
+        href="style.css"
+        → 현재 HTML 파일과 같은 폴더 안에 있는
+          style.css 파일을 불러오겠다는 뜻
+    -->
+</head>
+
+<body>
+    <!--
+        body 태그 안에는
+        실제 브라우저 화면에 보이는 내용을 작성한다.
+    -->
+
+    <h1><u>연습문제3_표태그</u></h1>
+    <!--
+        h1
+        → 가장 큰 제목
+
+        u
+        → 밑줄 표시
+
+        따라서 화면에는
+        "연습문제3_표태그"가 큰 글씨 + 밑줄로 표시된다.
+    -->
+
+    <div class="table-wrap">
+        <!--
+            표 전체를 하나의 영역으로 묶기 위한 div이다.
+
+            나중에 CSS에서
+            표의 너비나 위치를 잡을 때 편하게 사용하려고 만든다.
+        -->
+
+        <table>
+            <!--
+                table 태그
+                → 표 전체를 만드는 태그
+            -->
+
+            <tr>
+                <!--
+                    첫 번째 행
+                    → 표 맨 위 제목줄
+                -->
+                <th colspan="5" class="top-title">사계절 보석 컬렉션</th>
+                <!--
+                    th
+                    → 표의 제목 셀
+
+                    colspan="5"
+                    → 가로로 5칸을 하나로 합친다는 뜻
+
+                    현재 표의 전체 열 개수는 총 5개이다.
+                    (제품리스트 / 코드 / 분류 / 가격 / 구매가능 개수)
+
+                    그래서 맨 위 제목은 표 전체 너비를 차지하도록
+                    5칸을 하나로 합쳤다.
+                -->
+            </tr>
+
+            <tr>
+                <!--
+                    두 번째 행
+
+                    이 행에는
+                    왼쪽의 "제품리스트"와
+                    오른쪽의 각 열 제목(코드, 분류, 가격, 구매가능 개수)이 들어간다.
+                -->
+
+                <th rowspan="5" class="left-title">제품리스트</th>
+                <!--
+                    rowspan="5"
+                    → 세로로 5칸을 하나로 합친다는 뜻
+
+                    "제품리스트"는
+                    1) 코드/분류/가격/구매가능 개수 제목줄
+                    2) 01-468
+                    3) 01-469
+                    4) 01-470
+                    5) 01-471
+
+                    이렇게 총 5개의 행 옆에 계속 붙어 있으므로
+                    rowspan="5"를 사용한다.
+                -->
+
+                <th class="sub-title">코드</th>
+                <th class="sub-title">분류</th>
+                <th class="sub-title">가격</th>
+                <th class="sub-title">구매가능 개수</th>
+                <!--
+                    오른쪽 4칸은 표의 각 열 제목이다.
+                -->
+            </tr>
+
+            <tr>
+                <!-- 첫 번째 제품 정보 -->
+                <td class="data-cell">01-468</td>
+                <td class="data-cell">가을</td>
+                <td class="data-cell">200,000원</td>
+                <td class="data-cell">1068</td>
+            </tr>
+
+            <tr>
+                <!-- 두 번째 제품 정보 -->
+                <td class="data-cell">01-469</td>
+                <td class="data-cell">가을</td>
+                <td class="data-cell">150,000원</td>
+                <td class="data-cell">1700</td>
+            </tr>
+
+            <tr>
+                <!-- 세 번째 제품 정보 -->
+                <td class="data-cell">01-470</td>
+                <td class="data-cell">여름</td>
+                <td class="data-cell">950,000원</td>
+                <td class="data-cell">2500</td>
+            </tr>
+
+            <tr>
+                <!-- 네 번째 제품 정보 -->
+                <td class="data-cell">01-471</td>
+                <td class="data-cell">봄</td>
+                <td class="data-cell">120,000원</td>
+                <td class="data-cell">3200</td>
+            </tr>
+
+            <tr>
+                <!--
+                    마지막 행 : 총합 행
+
+                    왼쪽 부분은 "총합"
+                    오른쪽 두 칸은 가격 총합, 수량 총합을 표시한다.
+                -->
+
+                <th colspan="3" class="sum-title">총합</th>
+                <!--
+                    colspan="3"
+                    → 가로 3칸을 하나로 합친다.
+
+                    현재 이 줄에서는
+                    왼쪽부터
+
+                    1) 제품리스트 자리
+                    2) 코드 자리
+                    3) 분류 자리
+
+                    이 세 칸을 하나로 합쳐서 "총합"을 표시한다.
+
+                    그리고 남은 두 칸에는
+                    가격 총합, 구매가능 개수 총합을 넣는다.
+                -->
+
+                <td class="sum-data">1,420,000원</td>
+                <td class="sum-data">8468</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

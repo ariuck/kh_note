@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+
+    <style>
+        /*
+            ================================
+            페이지 전체 기본 설정
+            ================================
+        */
+        body {
+            font-family: Arial, "맑은 고딕", sans-serif;
+        }
+
+        /*
+            ================================
+            필수 입력 사항 영역
+            ================================
+        */
+        .required-area {
+            width: 690px;
+        }
+
+        /*
+            ================================
+            ID / 비밀번호 / 이메일 줄
+            ================================
+        */
+        .form-row {
+            margin-bottom: 7px;
+        }
+
+        /*
+            왼쪽 제목 부분
+            ID, 비밀번호, 비밀번호 확인, Email
+        */
+        .form-row label {
+            display: inline-block;
+            width: 95px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /*
+            기본 텍스트 입력창
+        */
+        .text-input {
+            width: 240px;
+        }
+
+        /*
+            ================================
+            구분선
+            ================================
+        */
+        hr {
+            margin-top: 12px;
+            margin-bottom: 22px;
+        }
+
+        /*
+            ================================
+            추가 정보 영역의 각 줄
+            ================================
+        */
+        .extra-row {
+            margin-bottom: 24px;
+        }
+
+        /*
+            자기소개 입력창
+        */
+        textarea {
+            width: 365px;
+            height: 75px;
+            resize: both;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        ================================
+        페이지 제목
+        ================================
+    -->
+    <h1>회원가입</h1>
+
+
+    <!--
+        ================================
+        회원가입 폼 시작
+        ================================
+
+        form 태그는 사용자가 입력하는
+        여러 입력 요소들을 하나로 묶을 때 사용한다.
+    -->
+    <form action="" method="post">
+
+
+        <!--
+            =====================================
+            필수 입력 사항
+            =====================================
+        -->
+        <div class="required-area">
+
+            <h3>필수 입력 사항</h3>
+
+
+            <!-- ============================ -->
+            <!-- ID -->
+            <!-- ============================ -->
+            <div class="form-row">
+
+                <label for="user-id">ID</label>
+
+                <!--
+                    type="text"
+                    → 일반 문자 입력창
+
+                    placeholder
+                    → 입력창 안에 연하게 보이는 안내 문구
+                -->
+                <input
+                    type="text"
+                    id="user-id"
+                    name="user-id"
+                    class="text-input"
+                    placeholder="아이디 10글자 이내"
+                >
+
+                <!--
+                    일반 버튼
+
+                    지금은 버튼만 만들어져 있고,
+                    실제 중복확인 기능은 JavaScript나 서버 기능을
+                    추가해야 작동한다.
+                -->
+                <button type="button">
+                    중복확인
+                </button>
+
+            </div>
+
+
+            <!-- ============================ -->
+            <!-- 비밀번호 -->
+            <!-- ============================ -->
+            <div class="form-row">
+
+                <label for="password">비밀번호</label>
+
+                <!--
+                    type="password"
+                    → 입력한 글자가 화면에 그대로 보이지 않고
+                      ● 또는 * 형태로 가려진다.
+                -->
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    class="text-input"
+                    placeholder="영문, 숫자, 특수문자 포함 8자 이상"
+                >
+
+            </div>
+
+
+            <!-- ============================ -->
+            <!-- 비밀번호 확인 -->
+            <!-- ============================ -->
+            <div class="form-row">
+
+                <label for="password-check">
+                    비밀번호 확인
+                </label>
+
+                <input
+                    type="password"
+                    id="password-check"
+                    name="password-check"
+                    class="text-input"
+                >
+
+            </div>
+
+
+            <!-- ============================ -->
+            <!-- Email -->
+            <!-- ============================ -->
+            <div class="form-row">
+
+                <label for="email">Email</label>
+
+                <!--
+                    이메일 앞부분 직접 입력
+                -->
+                <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    class="text-input"
+                >
+
+                <!--
+                    select
+                    → 여러 항목 중 하나를 고를 수 있는
+                      드롭다운 메뉴
+
+                    option
+                    → select 안에 들어가는 각각의 선택 항목
+                -->
+                <select name="email-domain">
+
+                    <option value="direct">
+                        직접입력
+                    </option>
+
+                    <option value="naver">
+                        naver.com
+                    </option>
+
+                    <option value="gmail">
+                        gmail.com
+                    </option>
+
+                    <option value="daum">
+                        daum.net
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!--
+            필수 입력 사항과 추가 정보를 나누는 선
+        -->
+        <hr>
+
+
+        <!--
+            =====================================
+            추가 정보
+            =====================================
+        -->
+        <h3>추가 정보</h3>
+
+
+        <!-- ============================ -->
+        <!-- 프로필 사진 -->
+        <!-- ============================ -->
+        <div class="extra-row">
+
+            <label for="profile">
+                프로필 사진 :
+            </label>
+
+            <!--
+                type="file"
+                → 컴퓨터에 있는 파일을 선택할 수 있는 입력 요소
+
+                브라우저에서
+                "파일 선택" 버튼이 자동으로 만들어진다.
+            -->
+            <input
+                type="file"
+                id="profile"
+                name="profile"
+            >
+
+        </div>
+
+
+        <!-- ============================ -->
+        <!-- 성별 -->
+        <!-- ============================ -->
+        <div class="extra-row">
+
+            성별 :
+
+            <!--
+                radio 버튼은 name 값을 같게 해야
+                여러 개 중 하나만 선택할 수 있다.
+            -->
+
+            <input
+                type="radio"
+                id="male"
+                name="gender"
+                value="male"
+                checked
+            >
+            <label for="male">남자</label>
+
+            <input
+                type="radio"
+                id="female"
+                name="gender"
+                value="female"
+            >
+            <label for="female">여자</label>
+
+        </div>
+
+
+        <!-- ============================ -->
+        <!-- 생년월일 -->
+        <!-- ============================ -->
+        <div class="extra-row">
+
+            <label for="birth">
+                생년월일 :
+            </label>
+
+            <!--
+                type="date"
+                → 날짜 선택 입력창
+
+                브라우저에 따라
+                달력 아이콘이 오른쪽에 표시된다.
+            -->
+            <input
+                type="date"
+                id="birth"
+                name="birth"
+            >
+
+        </div>
+
+
+        <!-- ============================ -->
+        <!-- 취미 -->
+        <!-- ============================ -->
+        <div class="extra-row">
+
+            취미 :
+            <br>
+
+            <!--
+                checkbox
+                → 여러 개를 동시에 선택할 수 있다.
+            -->
+
+            <input
+                type="checkbox"
+                id="game"
+                name="hobby"
+                value="game"
+            >
+            <label for="game">게임</label>
+
+
+            <input
+                type="checkbox"
+                id="exercise"
+                name="hobby"
+                value="exercise"
+            >
+            <label for="exercise">운동</label>
+
+
+            <input
+                type="checkbox"
+                id="sleep"
+                name="hobby"
+                value="sleep"
+            >
+            <label for="sleep">취침</label>
+
+            <br>
+
+
+            <input
+                type="checkbox"
+                id="dance"
+                name="hobby"
+                value="dance"
+            >
+            <label for="dance">댄스</label>
+
+
+            <input
+                type="checkbox"
+                id="song"
+                name="hobby"
+                value="song"
+            >
+            <label for="song">노래</label>
+
+
+            <input
+                type="checkbox"
+                id="study"
+                name="hobby"
+                value="study"
+                checked
+            >
+            <label for="study">공부</label>
+
+            <br>
+
+
+            <input
+                type="checkbox"
+                id="etc"
+                name="hobby"
+                value="etc"
+            >
+            <label for="etc">기타 :</label>
+
+            <!--
+                기타 취미를 직접 입력할 수 있는 입력창
+            -->
+            <input
+                type="text"
+                name="etc-hobby"
+            >
+
+        </div>
+
+
+        <!-- ============================ -->
+        <!-- 자기소개 -->
+        <!-- ============================ -->
+        <div class="extra-row">
+
+            <label for="intro">
+                자기소개
+            </label>
+
+            <br>
+
+            <!--
+                textarea
+                → 여러 줄의 긴 글을 입력할 때 사용
+            -->
+            <textarea
+                id="intro"
+                name="intro"
+            ></textarea>
+
+        </div>
+
+
+        <!-- ============================ -->
+        <!-- 아래쪽 버튼 3개 -->
+        <!-- ============================ -->
+
+        <!--
+            submit
+            → 입력 내용을 전송하는 버튼
+        -->
+        <button type="submit">
+            회원가입
+        </button>
+
+
+        <!--
+            reset
+            → 사용자가 입력한 내용을
+              처음 상태로 되돌리는 버튼
+        -->
+        <button type="reset">
+            다시입력
+        </button>
+
+
+        <!--
+            button
+            → 일반 버튼
+
+            실제 이전 페이지 이동 기능을 만들려면
+            JavaScript 등을 추가해야 한다.
+        -->
+        <button type="button">
+            이전으로
+        </button>
+
+
+    </form>
+
+</body>
+</html>

@@ -1,0 +1,182 @@
+body {
+  width: 80%;
+  margin: 0 auto;
+
+  font-family: Arial, "맑은 고딕", sans-serif;
+
+  background-color: #f5f5f5;
+
+  color: #222;
+}
+
+/* 큰 제목 */
+
+h1 {
+  text-align: center;
+
+  background-color: lightblue;
+
+  padding: 20px;
+
+  border-radius: 15px;
+}
+
+/* 소제목 */
+
+h2 {
+  color: darkblue;
+
+  border-left: 6px solid skyblue;
+
+  padding-left: 10px;
+
+  margin-top: 30px;
+}
+
+/* 내 사진 */
+
+.my-photo {
+  width: 200px;
+
+  border: 3px solid black;
+
+  border-radius: 15px;
+}
+
+/* 문단 */
+
+p {
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+/* 목록 */
+
+ul,
+ol {
+  background-color: white;
+
+  padding-top: 15px;
+
+  padding-bottom: 15px;
+
+  border-radius: 10px;
+}
+
+li {
+  margin: 7px;
+}
+
+/* 링크 */
+
+a {
+  color: blue;
+
+  text-decoration: none;
+
+  font-weight: bold;
+}
+
+a:hover {
+  color: red;
+
+  text-decoration: underline;
+}
+
+/* 표 */
+
+table {
+  width: 300px;
+
+  border-collapse: collapse;
+
+  background-color: white;
+
+  text-align: center;
+}
+
+th,
+td {
+  border: 1px solid black;
+
+  padding: 10px;
+}
+
+th {
+  background-color: skyblue;
+}
+
+/* 영상 */
+
+iframe {
+  border: 3px solid gray;
+
+  border-radius: 10px;
+}
+
+/* 구분선 */
+
+hr {
+  margin-top: 30px;
+
+  margin-bottom: 30px;
+}
+
+/* 형광펜 */
+
+mark {
+  background-color: yellow;
+
+  font-weight: bold;
+}
+
+/* 강조 글자 */
+
+strong {
+  color: darkred;
+}
+
+/* 게임, 영화 항목 */
+
+.hover-item {
+  position: relative;
+
+  font-size: 18px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+/* 마우스를 올렸을 때 글자 색 변경 */
+
+.hover-item:hover {
+  color: blue;
+}
+
+/* 사진은 처음에 숨김 */
+
+.hover-img {
+  display: none;
+
+  width: 300px;
+
+  position: absolute;
+
+  left: 120px;
+
+  top: -50px;
+
+  border: 2px solid black;
+
+  border-radius: 10px;
+
+  z-index: 10;
+}
+
+/* 마우스를 올리면 사진 보이기 */
+
+.hover-item:hover .hover-img {
+  display: block;
+}

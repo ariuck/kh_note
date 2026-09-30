@@ -1,0 +1,5 @@
+# 파일
+
+with open("memo.txt", "w", encoding="utf-8") as f:
+    f.write("첫 번째 줄\n")
+    f.write("두 번째 줄\n")

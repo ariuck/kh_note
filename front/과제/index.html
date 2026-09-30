@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>식단관리</title>
+    <link rel="stylesheet" href="./food.css" />
+    <script defer src="food.js"></script>
+  </head>
+
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>오늘 뭐 먹었지?</h1>
+        <p>먹은 음식이랑 칼로리를 기록해보자</p>
+
+        <button onclick="changeBg()">배경 사진 바꾸기</button>
+      </header>
+
+      <hr />
+
+      <div class="input-box">
+        <h2>오늘 먹은 음식 추가</h2>
+
+        <input type="text" id="food" placeholder="음식 이름" />
+
+        <input type="number" id="cal" placeholder="칼로리" />
+
+        <button onclick="addFood()">추가</button>
+      </div>
+
+      <div class="cal-box">
+        <h3>
+          오늘 현재
+          <span id="total">0</span>
+          kcal
+        </h3>
+
+        <div class="bar">
+          <div id="bar-in"></div>
+        </div>
+
+        <p id="cal-text">아직 여유 있음</p>
+      </div>
+
+      <div class="food-box">
+        <h2>오늘 먹은 것들</h2>
+
+        <div id="food-list"></div>
+      </div>
+
+      <hr />
+
+      <h2>오늘 뭐 먹을까?</h2>
+
+      <p class="help">음식 이름에 마우스를 올려보세요</p>
+
+      <div class="menu">
+        <div class="menu-item">
+          라면
+          <img src="ramen.jpg" alt="라면" />
+        </div>
+
+        <div class="menu-item">
+          닭가슴살
+          <img src="chicken.jpg" alt="닭가슴살" />
+        </div>
+
+        <div class="menu-item">
+          피자
+          <img src="pizza.jpg" alt="피자" />
+        </div>
+
+        <div class="menu-item">
+          샐러드
+          <img src="salad.jpg" alt="샐러드" />
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="random">
+        <h2>오늘의 잔소리</h2>
+
+        <button onclick="randomText()">잔소리 듣기</button>
+
+        <p id="random-text">누르면 뭔가 나옵니다</p>
+      </div>
+
+      <div class="photo">
+        <h2>오늘의 건강 사진</h2>
+
+        <div class="salad-box">
+          <img src="salad.jpg" alt="샐러드 사진" />
+
+          <div class="salad-text">맛없어</div>
+        </div>
+
+        <p>사진에 마우스를 올려보세요</p>
+      </div>
+
+      <footer>오늘도 잘 먹었습니다.</footer>
+    </div>
+  </body>
+</html>

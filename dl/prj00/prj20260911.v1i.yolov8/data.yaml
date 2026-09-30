@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../train/images
+test: ../train/images
+
+nc: 3
+names: ['lacto', 'lip', 'salt']
+
+roboflow:
+  workspace: -emkvo
+  project: prj20260911-gsnmr
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/-emkvo/prj20260911-gsnmr/dataset/1

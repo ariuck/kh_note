@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>주문하기</title>
+
+    <style>
+        /*
+            ================================
+            페이지 전체 기본 설정
+            ================================
+        */
+        body {
+            font-family: Arial, "맑은 고딕", sans-serif;
+        }
+
+
+        /*
+            각 입력 줄 사이 간격
+        */
+        .form-row {
+            margin-bottom: 28px;
+        }
+
+
+        /*
+            구분선 위/아래 간격
+        */
+        hr {
+            margin-top: 10px;
+            margin-bottom: 22px;
+        }
+
+
+        /*
+            피자 사이즈,
+            토핑 선택 제목
+        */
+        h2 {
+            font-size: 22px;
+        }
+
+
+        /*
+            라디오 버튼 줄 간격
+        */
+        .radio-row {
+            margin-bottom: 28px;
+        }
+
+
+        /*
+            체크박스 줄 간격
+        */
+        .check-row {
+            margin-bottom: 28px;
+        }
+
+
+        /*
+            textarea 크기
+        */
+        textarea {
+            width: 160px;
+            height: 45px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!--
+        ================================
+        페이지 제목
+        ================================
+    -->
+    <h1>주문하기</h1>
+
+
+    <!--
+        form 태그
+        → 사용자 입력값을 묶는 태그
+
+        action
+        → 데이터를 보낼 주소
+
+        method
+        → 데이터를 보내는 방식
+
+        지금은 연습용이라 action은 비워둔다.
+    -->
+    <form action="" method="post">
+
+
+        <!-- ================================ -->
+        <!-- 고객명 입력 -->
+        <!-- ================================ -->
+
+        <div class="form-row">
+
+            <!--
+                label
+                → 입력창에 대한 설명
+            -->
+            <label for="name">고객명 :</label>
+
+            <!--
+                type="text"
+                → 일반 글자 입력창
+
+                id="name"
+                → label의 for="name"과 연결
+
+                name="name"
+                → 서버로 보낼 때 사용할 이름
+            -->
+            <input type="text" id="name" name="name">
+
+        </div>
+
+
+        <!-- ================================ -->
+        <!-- 전화번호 입력 -->
+        <!-- ================================ -->
+
+        <div class="form-row">
+
+            <label for="phone">전화번호 :</label>
+
+            <!--
+                type="tel"
+                → 전화번호 입력용
+            -->
+            <input type="tel" id="phone" name="phone">
+
+        </div>
+
+
+        <!-- ================================ -->
+        <!-- 이메일 입력 -->
+        <!-- ================================ -->
+
+        <div class="form-row">
+
+            <label for="email">E-mail :</label>
+
+            <!--
+                type="email"
+                → 이메일 형식 입력용
+            -->
+            <input type="email" id="email" name="email">
+
+        </div>
+
+
+        <!-- 구분선 -->
+        <hr>
+
+
+        <!-- ================================ -->
+        <!-- 피자 사이즈 선택 -->
+        <!-- ================================ -->
+
+        <h2>피자사이즈</h2>
+
+
+        <!--
+            radio 버튼
+
+            name 값을 모두 똑같이 해야
+            셋 중 하나만 선택 가능하다.
+        -->
+
+        <div class="radio-row">
+            <input type="radio"
+                   id="small"
+                   name="pizza-size"
+                   value="small">
+
+            <label for="small">Small</label>
+        </div>
+
+
+        <div class="radio-row">
+            <input type="radio"
+                   id="medium"
+                   name="pizza-size"
+                   value="medium">
+
+            <label for="medium">Medium</label>
+        </div>
+
+
+        <div class="radio-row">
+            <input type="radio"
+                   id="large"
+                   name="pizza-size"
+                   value="large">
+
+            <label for="large">Large</label>
+        </div>
+
+
+        <!-- 구분선 -->
+        <hr>
+
+
+        <!-- ================================ -->
+        <!-- 토핑 선택 -->
+        <!-- ================================ -->
+
+        <h2>토핑 선택</h2>
+
+
+        <!--
+            checkbox
+            → 여러 개를 동시에 선택 가능
+        -->
+
+        <div class="check-row">
+
+            <input type="checkbox"
+                   id="bacon"
+                   name="topping"
+                   value="bacon">
+
+            <label for="bacon">베이컨</label>
+
+        </div>
+
+
+        <div class="check-row">
+
+            <input type="checkbox"
+                   id="cheese"
+                   name="topping"
+                   value="cheese">
+
+            <label for="cheese">치즈</label>
+
+        </div>
+
+
+        <div class="check-row">
+
+            <input type="checkbox"
+                   id="onion"
+                   name="topping"
+                   value="onion">
+
+            <label for="onion">양파</label>
+
+        </div>
+
+
+        <div class="check-row">
+
+            <input type="checkbox"
+                   id="mushroom"
+                   name="topping"
+                   value="mushroom">
+
+            <label for="mushroom">버섯</label>
+
+        </div>
+
+
+        <!-- ================================ -->
+        <!-- 희망 배송 시간 -->
+        <!-- ================================ -->
+
+        <div class="form-row">
+
+            <label for="delivery-time">
+                희망 배송 시간 :
+            </label>
+
+            <!--
+                type="time"
+                → 시간을 선택할 수 있는 입력창
+
+                브라우저에 따라
+                시계 모양 아이콘이 표시될 수 있다.
+            -->
+            <input type="time"
+                   id="delivery-time"
+                   name="delivery-time">
+
+        </div>
+
+
+        <!-- ================================ -->
+        <!-- 배송 요청사항 -->
+        <!-- ================================ -->
+
+        <div class="form-row">
+
+            <label for="request">
+                배송 시 요청사항 :
+            </label>
+
+            <!--
+                textarea
+                → 여러 줄 입력 가능
+
+                일반 input과 달리
+                긴 문장을 입력할 때 사용한다.
+            -->
+            <textarea id="request"
+                      name="request"></textarea>
+
+        </div>
+
+
+        <!-- ================================ -->
+        <!-- 주문하기 버튼 -->
+        <!-- ================================ -->
+
+        <!--
+            type="submit"
+            → form 안의 내용을 전송하는 버튼
+        -->
+        <button type="submit">
+            주문하기
+        </button>
+
+
+    </form>
+
+</body>
+</html>

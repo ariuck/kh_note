@@ -11,7 +11,8 @@ INSERT INTO BOARD(TITLE, CONTENT) VALUES('안녕' , '반갑습니다');
 SELECT * FROM BOARD;
 
 --데이터 수정
-
+UPDATE BOARD SET TITLE = '안녕하세요' WHERE TITLE = '안녕';
 --데이터 삭제
-
+DELETE BOARD WHERE TITLE = '안녕하세요';
 --테이블 삭제
+DROP TABLE BOARD;

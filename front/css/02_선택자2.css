@@ -1,0 +1,17 @@
+.outer > div:not(:nth-child(2n)){
+  background-color: red;
+}
+
+input[name="hobby"]:checked {
+  width: 50px;
+  height: 50px;
+}
+
+input[name="nickname"]:focus{
+  background-color: green;
+}
+
+p::after{
+  content: 'zzzzz';
+  background-color: yellow;
+}
