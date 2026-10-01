@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header,
+footer {
+  background-color: #249ee4;
+  color: white;
+  padding: 20px 40px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+nav a:hover,
+.active {
+  color: yellow;
+}
+
+/* 홈 */
+.main-area {
+  display: flex;
+  background-color: #e5f6ff;
+  padding: 25px 40px;
+}
+
+.main-text,
+.main-photo {
+  width: 50%;
+}
+
+.main-text {
+  padding: 30px;
+}
+
+.main-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+}
+
+.main-photo {
+  height: 300px;
+}
+
+.main-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* 본문 */
+.container {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.title,
+.category-title {
+  color: #1685c2;
+  border-bottom: 2px solid #249ee4;
+  padding-bottom: 8px;
+  margin-top: 40px;
+}
+
+/* 메뉴 */
+.recommend-list,
+.menu-list,
+.store-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.recommend-card,
+.menu-card,
+.store-card {
+  border: 1px solid #aaa;
+  background-color: white;
+  overflow: hidden;
+}
+
+.menu-img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background-color: #e5f6ff;
+  display: block;
+}
+
+.menu-info,
+.store-card {
+  padding: 15px;
+  background-color: white;
+}
+
+.menu-info h3 {
+  margin-top: 0;
+  color: #1685c2;
+}
+
+.menu-info p {
+  margin: 5px 0 10px;
+}
+
+.menu-info strong {
+  color: red;
+}
+
+/* 홈 소개 */
+.about-section,
+.intro-area {
+  display: flex;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.about-text,
+.about-photo,
+.intro-text,
+.intro-photo {
+  width: 50%;
+}
+
+.about-photo,
+.intro-photo {
+  height: 250px;
+}
+
+.about-photo img,
+.intro-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.info-list {
+  display: flex;
+  gap: 10px;
+}
+
+.info-list div {
+  padding: 10px 15px;
+  background-color: #fff5bd;
+  text-align: center;
+}
+
+.info-list strong,
+.info-list span {
+  display: block;
+}
+
+/* 서브페이지 */
+.page-title {
+  background-color: #e5f6ff;
+  padding: 25px 5%;
+}
+
+.history-item {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.history-item strong {
+  width: 100px;
+}
+
+.notice {
+  margin-top: 30px;
+  padding: 10px;
+  background-color: #fff5bd;
+}
+
+footer {
+  margin-top: 50px;
+  font-size: 12px;
+}
+
+/* 화면 작을 때 */
+@media (max-width: 700px) {
+  .main-area,
+  .about-section,
+  .intro-area {
+    display: block;
+  }
+
+  .main-text,
+  .main-photo,
+  .about-text,
+  .about-photo,
+  .intro-text,
+  .intro-photo {
+    width: 100%;
+  }
+
+  .main-photo {
+    height: 220px;
+    margin-top: 20px;
+  }
+
+  .recommend-list,
+  .menu-list,
+  .store-list {
+    grid-template-columns: 1fr;
+  }
+}
